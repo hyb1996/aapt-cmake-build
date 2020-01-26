@@ -3,7 +3,7 @@ project(aapt_cmake_build)
 
 
 #android源码目录
-set(AOSP android-8.1)
+set(AOSP android10-c2f2-release)
 
 #纯头文件引用
 set(native_header
