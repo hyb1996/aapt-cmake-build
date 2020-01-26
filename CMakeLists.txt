@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.6)
 project(aapt_cmake_buildscript)
 
 set(AOSP android-9.0.0_r10)
-set(AOSP_DIR ${AOSP_DIR}/${AOSP})
+set(AOSP_DIR ${CMAKE_SOURCE_DIR}/${AOSP})
 #纯头文件引用
 set(native_header
         ${CMAKE_SOURCE_DIR}/frameworks/native/include
