@@ -7,9 +7,9 @@ if (UNIX AND NOT APPLE)
 endif ()
 
 set(libziparchive_sources
-        ${CMAKE_SOURCE_DIR}/system/core/libziparchive/zip_archive.cc
-        ${CMAKE_SOURCE_DIR}/system/core/libziparchive/zip_archive_stream_entry.cc
-        ${CMAKE_SOURCE_DIR}/system/core/libziparchive/zip_writer.cc
+        ${AOSP_DIR}/system/core/libziparchive/zip_archive.cc
+        ${AOSP_DIR}/system/core/libziparchive/zip_archive_stream_entry.cc
+        ${AOSP_DIR}/system/core/libziparchive/zip_writer.cc
         )
 
 set(libziparchive_cflag "-DZLIB_CONST -Werror -Wall -D_FILE_OFFSET_BITS=64")

@@ -7,21 +7,21 @@ if (UNIX AND NOT APPLE)
 endif ()
 
 set(zlib_sources
-        ${CMAKE_SOURCE_DIR}/external/zlib/src/adler32.c
-        ${CMAKE_SOURCE_DIR}/external/zlib/src/compress.c
-        ${CMAKE_SOURCE_DIR}/external/zlib/src/crc32.c
-        ${CMAKE_SOURCE_DIR}/external/zlib/src/deflate.c
-        ${CMAKE_SOURCE_DIR}/external/zlib/src/gzclose.c
-        ${CMAKE_SOURCE_DIR}/external/zlib/src/gzlib.c
-        ${CMAKE_SOURCE_DIR}/external/zlib/src/gzread.c
-        ${CMAKE_SOURCE_DIR}/external/zlib/src/gzwrite.c
-        ${CMAKE_SOURCE_DIR}/external/zlib/src/infback.c
-        ${CMAKE_SOURCE_DIR}/external/zlib/src/inflate.c
-        ${CMAKE_SOURCE_DIR}/external/zlib/src/inftrees.c
-        ${CMAKE_SOURCE_DIR}/external/zlib/src/inffast.c
-        ${CMAKE_SOURCE_DIR}/external/zlib/src/trees.c
-        ${CMAKE_SOURCE_DIR}/external/zlib/src/uncompr.c
-        ${CMAKE_SOURCE_DIR}/external/zlib/src/zutil.c
+        ${AOSP_DIR}/external/zlib/src/adler32.c
+        ${AOSP_DIR}/external/zlib/src/compress.c
+        ${AOSP_DIR}/external/zlib/src/crc32.c
+        ${AOSP_DIR}/external/zlib/src/deflate.c
+        ${AOSP_DIR}/external/zlib/src/gzclose.c
+        ${AOSP_DIR}/external/zlib/src/gzlib.c
+        ${AOSP_DIR}/external/zlib/src/gzread.c
+        ${AOSP_DIR}/external/zlib/src/gzwrite.c
+        ${AOSP_DIR}/external/zlib/src/infback.c
+        ${AOSP_DIR}/external/zlib/src/inflate.c
+        ${AOSP_DIR}/external/zlib/src/inftrees.c
+        ${AOSP_DIR}/external/zlib/src/inffast.c
+        ${AOSP_DIR}/external/zlib/src/trees.c
+        ${AOSP_DIR}/external/zlib/src/uncompr.c
+        ${AOSP_DIR}/external/zlib/src/zutil.c
         )
 
 include_directories(

@@ -17,7 +17,7 @@ set(CMAKE_STATIC_LINKER_FLAGS_DEBUG "${CMAKE_STATIC_LINKER_FLAGS_DEBUG} -s")
 set(CMAKE_SHARED_LINKER_FLAGS_DEBUG "${CMAKE_SHARED_LINKER_FLAGS_DEBUG} -s")
 
 set(aapt2_sources
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/Main.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/Main.cpp
         )
 
 set(aapt2_cflag "-Werror -Wall -Wno-unused-parameter")

@@ -7,29 +7,29 @@ if (UNIX AND NOT APPLE)
 endif ()
 
 set(libprotobuf_sources
-        ${CMAKE_SOURCE_DIR}/external/protobuf/src/google/protobuf/stubs/atomicops_internals_x86_gcc.cc
-        ${CMAKE_SOURCE_DIR}/external/protobuf/src/google/protobuf/stubs/atomicops_internals_x86_msvc.cc
-        ${CMAKE_SOURCE_DIR}/external/protobuf/src/google/protobuf/stubs/bytestream.cc
-        ${CMAKE_SOURCE_DIR}/external/protobuf/src/google/protobuf/stubs/common.cc
-        ${CMAKE_SOURCE_DIR}/external/protobuf/src/google/protobuf/stubs/int128.cc
-        ${CMAKE_SOURCE_DIR}/external/protobuf/src/google/protobuf/stubs/once.cc
-        ${CMAKE_SOURCE_DIR}/external/protobuf/src/google/protobuf/stubs/status.cc
-        ${CMAKE_SOURCE_DIR}/external/protobuf/src/google/protobuf/stubs/statusor.cc
-        ${CMAKE_SOURCE_DIR}/external/protobuf/src/google/protobuf/stubs/stringpiece.cc
-        ${CMAKE_SOURCE_DIR}/external/protobuf/src/google/protobuf/stubs/stringprintf.cc
-        ${CMAKE_SOURCE_DIR}/external/protobuf/src/google/protobuf/stubs/structurally_valid.cc
-        ${CMAKE_SOURCE_DIR}/external/protobuf/src/google/protobuf/stubs/strutil.cc
-        ${CMAKE_SOURCE_DIR}/external/protobuf/src/google/protobuf/stubs/time.cc
-        ${CMAKE_SOURCE_DIR}/external/protobuf/src/google/protobuf/arena.cc
-        ${CMAKE_SOURCE_DIR}/external/protobuf/src/google/protobuf/arenastring.cc
-        ${CMAKE_SOURCE_DIR}/external/protobuf/src/google/protobuf/extension_set.cc
-        ${CMAKE_SOURCE_DIR}/external/protobuf/src/google/protobuf/generated_message_util.cc
-        ${CMAKE_SOURCE_DIR}/external/protobuf/src/google/protobuf/message_lite.cc
-        ${CMAKE_SOURCE_DIR}/external/protobuf/src/google/protobuf/repeated_field.cc
-        ${CMAKE_SOURCE_DIR}/external/protobuf/src/google/protobuf/wire_format_lite.cc
-        ${CMAKE_SOURCE_DIR}/external/protobuf/src/google/protobuf/io/coded_stream.cc
-        ${CMAKE_SOURCE_DIR}/external/protobuf/src/google/protobuf/io/zero_copy_stream.cc
-        ${CMAKE_SOURCE_DIR}/external/protobuf/src/google/protobuf/io/zero_copy_stream_impl_lite.cc
+        ${AOSP_DIR}/external/protobuf/src/google/protobuf/stubs/atomicops_internals_x86_gcc.cc
+        ${AOSP_DIR}/external/protobuf/src/google/protobuf/stubs/atomicops_internals_x86_msvc.cc
+        ${AOSP_DIR}/external/protobuf/src/google/protobuf/stubs/bytestream.cc
+        ${AOSP_DIR}/external/protobuf/src/google/protobuf/stubs/common.cc
+        ${AOSP_DIR}/external/protobuf/src/google/protobuf/stubs/int128.cc
+        ${AOSP_DIR}/external/protobuf/src/google/protobuf/stubs/once.cc
+        ${AOSP_DIR}/external/protobuf/src/google/protobuf/stubs/status.cc
+        ${AOSP_DIR}/external/protobuf/src/google/protobuf/stubs/statusor.cc
+        ${AOSP_DIR}/external/protobuf/src/google/protobuf/stubs/stringpiece.cc
+        ${AOSP_DIR}/external/protobuf/src/google/protobuf/stubs/stringprintf.cc
+        ${AOSP_DIR}/external/protobuf/src/google/protobuf/stubs/structurally_valid.cc
+        ${AOSP_DIR}/external/protobuf/src/google/protobuf/stubs/strutil.cc
+        ${AOSP_DIR}/external/protobuf/src/google/protobuf/stubs/time.cc
+        ${AOSP_DIR}/external/protobuf/src/google/protobuf/arena.cc
+        ${AOSP_DIR}/external/protobuf/src/google/protobuf/arenastring.cc
+        ${AOSP_DIR}/external/protobuf/src/google/protobuf/extension_set.cc
+        ${AOSP_DIR}/external/protobuf/src/google/protobuf/generated_message_util.cc
+        ${AOSP_DIR}/external/protobuf/src/google/protobuf/message_lite.cc
+        ${AOSP_DIR}/external/protobuf/src/google/protobuf/repeated_field.cc
+        ${AOSP_DIR}/external/protobuf/src/google/protobuf/wire_format_lite.cc
+        ${AOSP_DIR}/external/protobuf/src/google/protobuf/io/coded_stream.cc
+        ${AOSP_DIR}/external/protobuf/src/google/protobuf/io/zero_copy_stream.cc
+        ${AOSP_DIR}/external/protobuf/src/google/protobuf/io/zero_copy_stream_impl_lite.cc
         )
 
 set(libprotobuf_cflag "-Wno-sign-compare -Wno-unused-parameter -Wno-sign-promo -Wno-error=return-type -DGOOGLE_PROTOBUF_NO_RTTI")

@@ -7,24 +7,24 @@ if (UNIX AND NOT APPLE)
 endif ()
 
 set(base_sources
-        ${CMAKE_SOURCE_DIR}/system/core/base/file.cpp
-        ${CMAKE_SOURCE_DIR}/system/core/base/logging.cpp
-        ${CMAKE_SOURCE_DIR}/system/core/base/parsenetaddress.cpp
-        ${CMAKE_SOURCE_DIR}/system/core/base/quick_exit.cpp
-        ${CMAKE_SOURCE_DIR}/system/core/base/stringprintf.cpp
-        ${CMAKE_SOURCE_DIR}/system/core/base/strings.cpp
-        ${CMAKE_SOURCE_DIR}/system/core/base/test_utils.cpp
+        ${AOSP_DIR}/system/core/base/file.cpp
+        ${AOSP_DIR}/system/core/base/logging.cpp
+        ${AOSP_DIR}/system/core/base/parsenetaddress.cpp
+        ${AOSP_DIR}/system/core/base/quick_exit.cpp
+        ${AOSP_DIR}/system/core/base/stringprintf.cpp
+        ${AOSP_DIR}/system/core/base/strings.cpp
+        ${AOSP_DIR}/system/core/base/test_utils.cpp
         )
 
 if(WIN32)
     list(APPEND base_sources
-            ${CMAKE_SOURCE_DIR}/system/core/base/errors_windows.cpp
-            ${CMAKE_SOURCE_DIR}/system/core/base/utf8.cpp
+            ${AOSP_DIR}/system/core/base/errors_windows.cpp
+            ${AOSP_DIR}/system/core/base/utf8.cpp
             )
 elseif(UNIX)
     list(APPEND base_sources
-            ${CMAKE_SOURCE_DIR}/system/core/base/chrono_utils.cpp
-            ${CMAKE_SOURCE_DIR}/system/core/base/errors_unix.cpp
+            ${AOSP_DIR}/system/core/base/chrono_utils.cpp
+            ${AOSP_DIR}/system/core/base/errors_unix.cpp
             )
 endif()
 

@@ -7,40 +7,40 @@ if (UNIX AND NOT APPLE)
 endif ()
 
 set(libcutils_sources
-        ${CMAKE_SOURCE_DIR}/system/core/libcutils/config_utils.cpp
-        ${CMAKE_SOURCE_DIR}/system/core/libcutils/fs_config.cpp
-        ${CMAKE_SOURCE_DIR}/system/core/libcutils/canned_fs_config.cpp
-        ${CMAKE_SOURCE_DIR}/system/core/libcutils/hashmap.cpp
-        ${CMAKE_SOURCE_DIR}/system/core/libcutils/iosched_policy.cpp
-        ${CMAKE_SOURCE_DIR}/system/core/libcutils/load_file.cpp
-        ${CMAKE_SOURCE_DIR}/system/core/libcutils/native_handle.cpp
-        ${CMAKE_SOURCE_DIR}/system/core/libcutils/open_memstream.c
-        ${CMAKE_SOURCE_DIR}/system/core/libcutils/record_stream.cpp
-        ${CMAKE_SOURCE_DIR}/system/core/libcutils/sched_policy.cpp
-        ${CMAKE_SOURCE_DIR}/system/core/libcutils/sockets.cpp
-        ${CMAKE_SOURCE_DIR}/system/core/libcutils/strdup16to8.cpp
-        ${CMAKE_SOURCE_DIR}/system/core/libcutils/strdup8to16.cpp
-        ${CMAKE_SOURCE_DIR}/system/core/libcutils/strlcpy.c
-        ${CMAKE_SOURCE_DIR}/system/core/libcutils/threads.cpp
+        ${AOSP_DIR}/system/core/libcutils/config_utils.cpp
+        ${AOSP_DIR}/system/core/libcutils/fs_config.cpp
+        ${AOSP_DIR}/system/core/libcutils/canned_fs_config.cpp
+        ${AOSP_DIR}/system/core/libcutils/hashmap.cpp
+        ${AOSP_DIR}/system/core/libcutils/iosched_policy.cpp
+        ${AOSP_DIR}/system/core/libcutils/load_file.cpp
+        ${AOSP_DIR}/system/core/libcutils/native_handle.cpp
+        ${AOSP_DIR}/system/core/libcutils/open_memstream.c
+        ${AOSP_DIR}/system/core/libcutils/record_stream.cpp
+        ${AOSP_DIR}/system/core/libcutils/sched_policy.cpp
+        ${AOSP_DIR}/system/core/libcutils/sockets.cpp
+        ${AOSP_DIR}/system/core/libcutils/strdup16to8.cpp
+        ${AOSP_DIR}/system/core/libcutils/strdup8to16.cpp
+        ${AOSP_DIR}/system/core/libcutils/strlcpy.c
+        ${AOSP_DIR}/system/core/libcutils/threads.cpp
         )
 
 if (WIN32)
     list(APPEND libcutils_sources
-            ${CMAKE_SOURCE_DIR}/system/core/libcutils/socket_inaddr_any_server_windows.cpp
-            ${CMAKE_SOURCE_DIR}/system/core/libcutils/socket_network_client_windows.cpp
-            ${CMAKE_SOURCE_DIR}/system/core/libcutils/sockets_windows.cpp
+            ${AOSP_DIR}/system/core/libcutils/socket_inaddr_any_server_windows.cpp
+            ${AOSP_DIR}/system/core/libcutils/socket_network_client_windows.cpp
+            ${AOSP_DIR}/system/core/libcutils/sockets_windows.cpp
             )
 elseif (UNIX)
     list(APPEND libcutils_sources
-            ${CMAKE_SOURCE_DIR}/system/core/libcutils/android_get_control_file.cpp
-            ${CMAKE_SOURCE_DIR}/system/core/libcutils/fs.cpp
-            ${CMAKE_SOURCE_DIR}/system/core/libcutils/multiuser.cpp
-            ${CMAKE_SOURCE_DIR}/system/core/libcutils/socket_inaddr_any_server_unix.cpp
-            ${CMAKE_SOURCE_DIR}/system/core/libcutils/socket_local_client_unix.cpp
-            ${CMAKE_SOURCE_DIR}/system/core/libcutils/socket_local_server_unix.cpp
-            ${CMAKE_SOURCE_DIR}/system/core/libcutils/socket_network_client_unix.cpp
-            ${CMAKE_SOURCE_DIR}/system/core/libcutils/sockets_unix.cpp
-            ${CMAKE_SOURCE_DIR}/system/core/libcutils/str_parms.cpp
+            ${AOSP_DIR}/system/core/libcutils/android_get_control_file.cpp
+            ${AOSP_DIR}/system/core/libcutils/fs.cpp
+            ${AOSP_DIR}/system/core/libcutils/multiuser.cpp
+            ${AOSP_DIR}/system/core/libcutils/socket_inaddr_any_server_unix.cpp
+            ${AOSP_DIR}/system/core/libcutils/socket_local_client_unix.cpp
+            ${AOSP_DIR}/system/core/libcutils/socket_local_server_unix.cpp
+            ${AOSP_DIR}/system/core/libcutils/socket_network_client_unix.cpp
+            ${AOSP_DIR}/system/core/libcutils/sockets_unix.cpp
+            ${AOSP_DIR}/system/core/libcutils/str_parms.cpp
             )
 endif ()
 

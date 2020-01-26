@@ -7,23 +7,23 @@ if (UNIX AND NOT APPLE)
 endif ()
 
 set(libpng_sources
-        ${CMAKE_SOURCE_DIR}/external/libpng/png.c
-        ${CMAKE_SOURCE_DIR}/external/libpng/pngerror.c
-        ${CMAKE_SOURCE_DIR}/external/libpng/pngget.c
-        ${CMAKE_SOURCE_DIR}/external/libpng/pngmem.c
-        ${CMAKE_SOURCE_DIR}/external/libpng/pngpread.c
-        ${CMAKE_SOURCE_DIR}/external/libpng/pngread.c
-        ${CMAKE_SOURCE_DIR}/external/libpng/pngrio.c
-        ${CMAKE_SOURCE_DIR}/external/libpng/pngrtran.c
-        ${CMAKE_SOURCE_DIR}/external/libpng/pngrutil.c
-        ${CMAKE_SOURCE_DIR}/external/libpng/pngset.c
-        ${CMAKE_SOURCE_DIR}/external/libpng/pngtrans.c
-        ${CMAKE_SOURCE_DIR}/external/libpng/pngwio.c
-        ${CMAKE_SOURCE_DIR}/external/libpng/pngwrite.c
-        ${CMAKE_SOURCE_DIR}/external/libpng/pngwtran.c
-        ${CMAKE_SOURCE_DIR}/external/libpng/pngwutil.c
-        ${CMAKE_SOURCE_DIR}/external/libpng/contrib/intel/intel_init.c
-        ${CMAKE_SOURCE_DIR}/external/libpng/contrib/intel/filter_sse2_intrinsics.c
+        ${AOSP_DIR}/external/libpng/png.c
+        ${AOSP_DIR}/external/libpng/pngerror.c
+        ${AOSP_DIR}/external/libpng/pngget.c
+        ${AOSP_DIR}/external/libpng/pngmem.c
+        ${AOSP_DIR}/external/libpng/pngpread.c
+        ${AOSP_DIR}/external/libpng/pngread.c
+        ${AOSP_DIR}/external/libpng/pngrio.c
+        ${AOSP_DIR}/external/libpng/pngrtran.c
+        ${AOSP_DIR}/external/libpng/pngrutil.c
+        ${AOSP_DIR}/external/libpng/pngset.c
+        ${AOSP_DIR}/external/libpng/pngtrans.c
+        ${AOSP_DIR}/external/libpng/pngwio.c
+        ${AOSP_DIR}/external/libpng/pngwrite.c
+        ${AOSP_DIR}/external/libpng/pngwtran.c
+        ${AOSP_DIR}/external/libpng/pngwutil.c
+        ${AOSP_DIR}/external/libpng/contrib/intel/intel_init.c
+        ${AOSP_DIR}/external/libpng/contrib/intel/filter_sse2_intrinsics.c
         )
 
 include_directories(

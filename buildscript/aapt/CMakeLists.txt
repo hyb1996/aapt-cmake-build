@@ -18,7 +18,7 @@ set(CMAKE_SHARED_LINKER_FLAGS_DEBUG "${CMAKE_SHARED_LINKER_FLAGS_DEBUG} -s")
 
 
 set(aapt_sources
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt/Main.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt/Main.cpp
         )
 
 set(aapt_cflag "-Werror -Wall -Wno-format-y2k -DSTATIC_ANDROIDFW_FOR_TOOLS")

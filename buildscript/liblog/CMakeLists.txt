@@ -7,29 +7,29 @@ if (UNIX AND NOT APPLE)
 endif ()
 
 set(liblog_sources
-        ${CMAKE_SOURCE_DIR}/system/core/liblog/config_read.c
-        ${CMAKE_SOURCE_DIR}/system/core/liblog/config_write.c
-        ${CMAKE_SOURCE_DIR}/system/core/liblog/local_logger.c
-        ${CMAKE_SOURCE_DIR}/system/core/liblog/log_event_list.c
-        ${CMAKE_SOURCE_DIR}/system/core/liblog/log_event_write.c
-        ${CMAKE_SOURCE_DIR}/system/core/liblog/log_ratelimit.cpp
-        ${CMAKE_SOURCE_DIR}/system/core/liblog/logger_lock.c
-        ${CMAKE_SOURCE_DIR}/system/core/liblog/logger_name.c
-        ${CMAKE_SOURCE_DIR}/system/core/liblog/logger_read.c
-        ${CMAKE_SOURCE_DIR}/system/core/liblog/logger_write.c
-        ${CMAKE_SOURCE_DIR}/system/core/liblog/logprint.c
-        ${CMAKE_SOURCE_DIR}/system/core/liblog/stderr_write.c
+        ${AOSP_DIR}/system/core/liblog/config_read.c
+        ${AOSP_DIR}/system/core/liblog/config_write.c
+        ${AOSP_DIR}/system/core/liblog/local_logger.c
+        ${AOSP_DIR}/system/core/liblog/log_event_list.c
+        ${AOSP_DIR}/system/core/liblog/log_event_write.c
+        ${AOSP_DIR}/system/core/liblog/log_ratelimit.cpp
+        ${AOSP_DIR}/system/core/liblog/logger_lock.c
+        ${AOSP_DIR}/system/core/liblog/logger_name.c
+        ${AOSP_DIR}/system/core/liblog/logger_read.c
+        ${AOSP_DIR}/system/core/liblog/logger_write.c
+        ${AOSP_DIR}/system/core/liblog/logprint.c
+        ${AOSP_DIR}/system/core/liblog/stderr_write.c
         )
 
 set(liblog_host_sources
-        ${CMAKE_SOURCE_DIR}/system/core/liblog/fake_log_device.c
-        ${CMAKE_SOURCE_DIR}/system/core/liblog/fake_writer.c
+        ${AOSP_DIR}/system/core/liblog/fake_log_device.c
+        ${AOSP_DIR}/system/core/liblog/fake_writer.c
         )
 
 if(WIN32)
-    list(APPEND liblog_host_sources ${CMAKE_SOURCE_DIR}/system/core/liblog/uio.c)
+    list(APPEND liblog_host_sources ${AOSP_DIR}/system/core/liblog/uio.c)
 elseif(UNIX)
-    list(APPEND liblog_host_sources  ${CMAKE_SOURCE_DIR}/system/core/liblog/event_tag_map.cpp)
+    list(APPEND liblog_host_sources  ${AOSP_DIR}/system/core/liblog/event_tag_map.cpp)
 endif()
 
 set(liblog_cflag "-DFAKE_LOG_DEVICE=1 -Werror -fvisibility=hidden -DLIBLOG_LOG_TAG=1006 -DSNET_EVENT_LOG_TAG=1397638484")

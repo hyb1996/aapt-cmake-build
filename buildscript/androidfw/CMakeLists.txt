@@ -7,26 +7,26 @@ if (UNIX AND NOT APPLE)
 endif ()
 
 set(androidfw_sources
-        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/ApkAssets.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/Asset.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/AssetDir.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/AssetManager.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/AssetManager2.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/AttributeResolution.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/ChunkIterator.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/Idmap.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/LoadedArsc.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/LocaleData.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/misc.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/ObbFile.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/ResourceTypes.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/ResourceUtils.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/StreamingZipInflater.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/TypeWrappers.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/Util.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/ZipFileRO.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/ZipUtils.cpp
-#        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/Helper.cpp
+        ${AOSP_DIR}/frameworks/base/libs/androidfw/ApkAssets.cpp
+        ${AOSP_DIR}/frameworks/base/libs/androidfw/Asset.cpp
+        ${AOSP_DIR}/frameworks/base/libs/androidfw/AssetDir.cpp
+        ${AOSP_DIR}/frameworks/base/libs/androidfw/AssetManager.cpp
+        ${AOSP_DIR}/frameworks/base/libs/androidfw/AssetManager2.cpp
+        ${AOSP_DIR}/frameworks/base/libs/androidfw/AttributeResolution.cpp
+        ${AOSP_DIR}/frameworks/base/libs/androidfw/ChunkIterator.cpp
+        ${AOSP_DIR}/frameworks/base/libs/androidfw/Idmap.cpp
+        ${AOSP_DIR}/frameworks/base/libs/androidfw/LoadedArsc.cpp
+        ${AOSP_DIR}/frameworks/base/libs/androidfw/LocaleData.cpp
+        ${AOSP_DIR}/frameworks/base/libs/androidfw/misc.cpp
+        ${AOSP_DIR}/frameworks/base/libs/androidfw/ObbFile.cpp
+        ${AOSP_DIR}/frameworks/base/libs/androidfw/ResourceTypes.cpp
+        ${AOSP_DIR}/frameworks/base/libs/androidfw/ResourceUtils.cpp
+        ${AOSP_DIR}/frameworks/base/libs/androidfw/StreamingZipInflater.cpp
+        ${AOSP_DIR}/frameworks/base/libs/androidfw/TypeWrappers.cpp
+        ${AOSP_DIR}/frameworks/base/libs/androidfw/Util.cpp
+        ${AOSP_DIR}/frameworks/base/libs/androidfw/ZipFileRO.cpp
+        ${AOSP_DIR}/frameworks/base/libs/androidfw/ZipUtils.cpp
+#        ${AOSP_DIR}/frameworks/base/libs/androidfw/Helper.cpp
         )
 
 set(androidfw_cflag "-Werror -Wall -Wunused -Wunreachable-code -DSTATIC_ANDROIDFW_FOR_TOOLS")

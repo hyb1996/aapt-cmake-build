@@ -8,111 +8,111 @@ endif ()
 
 if (UNIX)
     add_custom_target(protobuffer_h
-            WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
+            WORKING_DIRECTORY "${AOSP_DIR}"
             COMMAND ${CMAKE_BINARY_DIR}/buildscript/protobuf/aprotoc/aprotoc frameworks/base/tools/aapt2/Resources.proto frameworks/base/tools/aapt2/ResourcesInternal.proto frameworks/base/tools/aapt2/Configuration.proto --cpp_out=frameworks/base/tools/aapt2
             DEPENDS aprotoc
             )
 endif ()
 
 set(aapt2_static_sources
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/cmd/Compile.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/cmd/Convert.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/cmd/Diff.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/cmd/Dump.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/cmd/Link.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/cmd/Optimize.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/cmd/Util.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/compile/IdAssigner.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/compile/InlineXmlFormatParser.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/compile/NinePatch.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/compile/Png.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/compile/PngChunkFilter.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/compile/PngCrunch.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/compile/PseudolocaleGenerator.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/compile/Pseudolocalizer.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/compile/XmlIdCollector.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/configuration/ConfigurationParser.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/filter/AbiFilter.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/filter/ConfigFilter.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/format/Archive.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/format/Container.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/format/binary/BinaryResourceParser.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/format/binary/ResChunkPullParser.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/format/binary/TableFlattener.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/format/binary/XmlFlattener.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/format/proto/ProtoDeserialize.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/format/proto/ProtoSerialize.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/io/BigBufferStream.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/io/File.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/io/FileStream.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/io/FileSystem.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/io/StringStream.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/io/Util.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/io/ZipArchive.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/link/AutoVersioner.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/link/ManifestFixer.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/link/NoDefaultResourceRemover.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/link/ProductFilter.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/link/PrivateAttributeMover.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/link/ReferenceLinker.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/link/TableMerger.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/link/XmlCompatVersioner.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/link/XmlNamespaceRemover.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/link/XmlReferenceLinker.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/optimize/MultiApkGenerator.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/optimize/ResourceDeduper.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/optimize/VersionCollapser.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/process/SymbolTable.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/split/TableSplitter.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/text/Printer.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/text/Unicode.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/text/Utf8Iterator.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/util/BigBuffer.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/util/Files.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/util/Util.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/ConfigDescription.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/Debug.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/DominatorTree.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/Flags.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/java/AnnotationProcessor.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/java/ClassDefinition.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/java/JavaClassGenerator.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/java/ManifestClassGenerator.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/java/ProguardRules.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/LoadedApk.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/Locale.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/Resource.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/ResourceParser.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/ResourceTable.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/ResourceUtils.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/ResourceValues.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/SdkConstants.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/StringPool.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/xml/XmlActionExecutor.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/xml/XmlDom.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/xml/XmlPullParser.cpp
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/xml/XmlUtil.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/cmd/Compile.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/cmd/Convert.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/cmd/Diff.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/cmd/Dump.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/cmd/Link.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/cmd/Optimize.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/cmd/Util.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/compile/IdAssigner.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/compile/InlineXmlFormatParser.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/compile/NinePatch.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/compile/Png.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/compile/PngChunkFilter.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/compile/PngCrunch.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/compile/PseudolocaleGenerator.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/compile/Pseudolocalizer.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/compile/XmlIdCollector.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/configuration/ConfigurationParser.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/filter/AbiFilter.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/filter/ConfigFilter.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/format/Archive.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/format/Container.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/format/binary/BinaryResourceParser.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/format/binary/ResChunkPullParser.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/format/binary/TableFlattener.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/format/binary/XmlFlattener.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/format/proto/ProtoDeserialize.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/format/proto/ProtoSerialize.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/io/BigBufferStream.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/io/File.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/io/FileStream.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/io/FileSystem.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/io/StringStream.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/io/Util.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/io/ZipArchive.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/link/AutoVersioner.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/link/ManifestFixer.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/link/NoDefaultResourceRemover.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/link/ProductFilter.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/link/PrivateAttributeMover.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/link/ReferenceLinker.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/link/TableMerger.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/link/XmlCompatVersioner.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/link/XmlNamespaceRemover.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/link/XmlReferenceLinker.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/optimize/MultiApkGenerator.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/optimize/ResourceDeduper.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/optimize/VersionCollapser.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/process/SymbolTable.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/split/TableSplitter.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/text/Printer.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/text/Unicode.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/text/Utf8Iterator.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/util/BigBuffer.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/util/Files.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/util/Util.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/ConfigDescription.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/Debug.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/DominatorTree.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/Flags.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/java/AnnotationProcessor.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/java/ClassDefinition.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/java/JavaClassGenerator.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/java/ManifestClassGenerator.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/java/ProguardRules.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/LoadedApk.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/Locale.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/Resource.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/ResourceParser.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/ResourceTable.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/ResourceUtils.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/ResourceValues.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/SdkConstants.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/StringPool.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/xml/XmlActionExecutor.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/xml/XmlDom.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/xml/XmlPullParser.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/xml/XmlUtil.cpp
         )
 
 #生成的文件在这个目录
-if (EXISTS ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/Resources.pb.cc)
-    list(APPEND aapt2_static_sources ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/Resources.pb.cc)
+if (EXISTS ${AOSP_DIR}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/Resources.pb.cc)
+    list(APPEND aapt2_static_sources ${AOSP_DIR}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/Resources.pb.cc)
 else ()
-    message(STATUS "请先使用cmake /path/to/cmakeFiles --target protobuffer_h生成protobuffer相关文件${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/Resources.pb.cc，否则后续构建无法正常进行")
+    message(STATUS "请先使用cmake /path/to/cmakeFiles --target protobuffer_h生成protobuffer相关文件${AOSP_DIR}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/Resources.pb.cc，否则后续构建无法正常进行")
 endif ()
 
 #生成的文件在这个目录
-if (EXISTS ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/ResourcesInternal.pb.cc)
-    list(APPEND aapt2_static_sources ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/ResourcesInternal.pb.cc)
+if (EXISTS ${AOSP_DIR}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/ResourcesInternal.pb.cc)
+    list(APPEND aapt2_static_sources ${AOSP_DIR}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/ResourcesInternal.pb.cc)
 else ()
-    message(STATUS "请先使用cmake /path/to/cmakeFiles --target protobuffer_h生成protobuffer相关文件${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/ResourcesInternal.pb.cc，否则后续构建无法正常进行")
+    message(STATUS "请先使用cmake /path/to/cmakeFiles --target protobuffer_h生成protobuffer相关文件${AOSP_DIR}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/ResourcesInternal.pb.cc，否则后续构建无法正常进行")
 endif ()
 
 #生成的文件在这个目录
-if (EXISTS ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/Configuration.pb.cc)
-    list(APPEND aapt2_static_sources ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/Configuration.pb.cc)
+if (EXISTS ${AOSP_DIR}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/Configuration.pb.cc)
+    list(APPEND aapt2_static_sources ${AOSP_DIR}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/Configuration.pb.cc)
 else ()
-    message(STATUS "请先使用cmake /path/to/cmakeFiles --target protobuffer_h生成protobuffer相关文件${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/Configuration.pb.cc，否则后续构建无法正常进行")
+    message(STATUS "请先使用cmake /path/to/cmakeFiles --target protobuffer_h生成protobuffer相关文件${AOSP_DIR}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/Configuration.pb.cc，否则后续构建无法正常进行")
 endif ()
 
 set(aapt2_static_cflag "-Werror -Wall -Wno-unused-parameter -Wno-delete-non-virtual-dtor")
@@ -165,7 +165,7 @@ include_directories(
         ${libpng_header}
         ${expat_header}
         #生成的文件头文件
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/
 )
 
 #mac不参与下面三个库的编译，否则libaapt2_jni有问题

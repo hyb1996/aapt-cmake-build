@@ -7,25 +7,25 @@ if (UNIX AND NOT APPLE)
 endif ()
 
 set(libcxxabi_sources
-        ${CMAKE_SOURCE_DIR}/external/libcxxabi/src/abort_message.cpp
-        ${CMAKE_SOURCE_DIR}/external/libcxxabi/src/cxa_aux_runtime.cpp
-        ${CMAKE_SOURCE_DIR}/external/libcxxabi/src/cxa_default_handlers.cpp
-        ${CMAKE_SOURCE_DIR}/external/libcxxabi/src/cxa_demangle.cpp
-        ${CMAKE_SOURCE_DIR}/external/libcxxabi/src/cxa_exception.cpp
-        ${CMAKE_SOURCE_DIR}/external/libcxxabi/src/cxa_exception_storage.cpp
-        ${CMAKE_SOURCE_DIR}/external/libcxxabi/src/cxa_guard.cpp
-        ${CMAKE_SOURCE_DIR}/external/libcxxabi/src/cxa_handlers.cpp
-        ${CMAKE_SOURCE_DIR}/external/libcxxabi/src/cxa_personality.cpp
-        ${CMAKE_SOURCE_DIR}/external/libcxxabi/src/cxa_thread_atexit.cpp
-        ${CMAKE_SOURCE_DIR}/external/libcxxabi/src/cxa_unexpected.cpp
-        ${CMAKE_SOURCE_DIR}/external/libcxxabi/src/cxa_vector.cpp
-        ${CMAKE_SOURCE_DIR}/external/libcxxabi/src/cxa_virtual.cpp
-        ${CMAKE_SOURCE_DIR}/external/libcxxabi/src/fallback_malloc.cpp
-        ${CMAKE_SOURCE_DIR}/external/libcxxabi/src/private_typeinfo.cpp
-        ${CMAKE_SOURCE_DIR}/external/libcxxabi/src/stdlib_exception.cpp
-        ${CMAKE_SOURCE_DIR}/external/libcxxabi/src/stdlib_new_delete.cpp
-        ${CMAKE_SOURCE_DIR}/external/libcxxabi/src/stdlib_stdexcept.cpp
-        ${CMAKE_SOURCE_DIR}/external/libcxxabi/src/stdlib_typeinfo.cpp
+        ${AOSP_DIR}/external/libcxxabi/src/abort_message.cpp
+        ${AOSP_DIR}/external/libcxxabi/src/cxa_aux_runtime.cpp
+        ${AOSP_DIR}/external/libcxxabi/src/cxa_default_handlers.cpp
+        ${AOSP_DIR}/external/libcxxabi/src/cxa_demangle.cpp
+        ${AOSP_DIR}/external/libcxxabi/src/cxa_exception.cpp
+        ${AOSP_DIR}/external/libcxxabi/src/cxa_exception_storage.cpp
+        ${AOSP_DIR}/external/libcxxabi/src/cxa_guard.cpp
+        ${AOSP_DIR}/external/libcxxabi/src/cxa_handlers.cpp
+        ${AOSP_DIR}/external/libcxxabi/src/cxa_personality.cpp
+        ${AOSP_DIR}/external/libcxxabi/src/cxa_thread_atexit.cpp
+        ${AOSP_DIR}/external/libcxxabi/src/cxa_unexpected.cpp
+        ${AOSP_DIR}/external/libcxxabi/src/cxa_vector.cpp
+        ${AOSP_DIR}/external/libcxxabi/src/cxa_virtual.cpp
+        ${AOSP_DIR}/external/libcxxabi/src/fallback_malloc.cpp
+        ${AOSP_DIR}/external/libcxxabi/src/private_typeinfo.cpp
+        ${AOSP_DIR}/external/libcxxabi/src/stdlib_exception.cpp
+        ${AOSP_DIR}/external/libcxxabi/src/stdlib_new_delete.cpp
+        ${AOSP_DIR}/external/libcxxabi/src/stdlib_stdexcept.cpp
+        ${AOSP_DIR}/external/libcxxabi/src/stdlib_typeinfo.cpp
         )
 
 set(libcxxabi_cflag "")

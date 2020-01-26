@@ -7,10 +7,10 @@ if (UNIX AND NOT APPLE)
 endif ()
 
 set(expat_sources
-        ${CMAKE_SOURCE_DIR}/external/expat/lib/loadlibrary.c
-        ${CMAKE_SOURCE_DIR}/external/expat/lib/xmlparse.c
-        ${CMAKE_SOURCE_DIR}/external/expat/lib/xmlrole.c
-        ${CMAKE_SOURCE_DIR}/external/expat/lib/xmltok.c
+        ${AOSP_DIR}/external/expat/lib/loadlibrary.c
+        ${AOSP_DIR}/external/expat/lib/xmlparse.c
+        ${AOSP_DIR}/external/expat/lib/xmlrole.c
+        ${AOSP_DIR}/external/expat/lib/xmltok.c
         )
 
 include_directories(

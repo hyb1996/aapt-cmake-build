@@ -7,7 +7,7 @@ if (UNIX AND NOT APPLE)
 endif ()
 
 set(aapt2_jni_sources
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/jni/aapt2_jni.cpp
+        ${AOSP_DIR}/frameworks/base/tools/aapt2/jni/aapt2_jni.cpp
         )
 
 set(aapt2_jni_cflag "-Werror -Wall -Wno-unused-parameter")
