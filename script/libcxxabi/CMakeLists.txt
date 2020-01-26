@@ -6,27 +6,28 @@ if (UNIX AND NOT APPLE)
     SET(CMAKE_CXX_COMPILER "/usr/bin/clang++")
 endif ()
 
-set(libcxxabi_sources
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/abort_message.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_aux_runtime.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_default_handlers.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_demangle.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_exception.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_exception_storage.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_guard.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_handlers.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_new_delete.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_personality.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_thread_atexit.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_unexpected.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_vector.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_virtual.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/fallback_malloc.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/private_typeinfo.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/stdlib_exception.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/stdlib_stdexcept.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/stdlib_typeinfo.cpp
-        )
+file(GLOB_RECURSE libcxxabi_sources ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/*.cpp)
+# set(libcxxabi_sources
+#         ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/abort_message.cpp
+#         ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_aux_runtime.cpp
+#         ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_default_handlers.cpp
+#         ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_demangle.cpp
+#         ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_exception.cpp
+#         ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_exception_storage.cpp
+#         ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_guard.cpp
+#         ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_handlers.cpp
+#         ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_new_delete.cpp
+#         ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_personality.cpp
+#         ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_thread_atexit.cpp
+#         ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_unexpected.cpp
+#         ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_vector.cpp
+#         ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/cxa_virtual.cpp
+#         ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/fallback_malloc.cpp
+#         ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/private_typeinfo.cpp
+#         ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/stdlib_exception.cpp
+#         ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/stdlib_stdexcept.cpp
+#         ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/src/stdlib_typeinfo.cpp
+#         )
 
 set(libcxxabi_cflag "")
 
