@@ -15,12 +15,6 @@ if (UNIX)
 endif ()
 
 set(aapt2_static_sources
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/cmd/Compile.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/cmd/Diff.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/cmd/Dump.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/cmd/Link.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/cmd/Optimize.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/cmd/Util.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/compile/IdAssigner.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/compile/InlineXmlFormatParser.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/compile/NinePatch.cpp
@@ -31,52 +25,56 @@ set(aapt2_static_sources
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/compile/Pseudolocalizer.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/compile/XmlIdCollector.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/configuration/ConfigurationParser.cpp
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/dump/DumpManifest.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/filter/AbiFilter.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/filter/ConfigFilter.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/flatten/Archive.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/flatten/TableFlattener.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/flatten/XmlFlattener.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/io/BigBufferStreams.cpp
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/format/Archive.cpp
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/format/Container.cpp
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/format/binary/BinaryResourceParser.cpp
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/format/binary/ResChunkPullParser.cpp
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/format/binary/TableFlattener.cpp
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/format/binary/XmlFlattener.cpp
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/format/proto/ProtoDeserialize.cpp
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/format/proto/ProtoSerialize.cpp
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/io/BigBufferStream.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/io/File.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/io/FileInputStream.cpp
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/io/FileStream.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/io/FileSystem.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/io/StringInputStream.cpp
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/io/StringStream.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/io/Util.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/io/ZipArchive.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/link/AutoVersioner.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/link/ManifestFixer.cpp
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/link/NoDefaultResourceRemover.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/link/ProductFilter.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/link/PrivateAttributeMover.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/link/ReferenceLinker.cpp
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/link/ResourceExcluder.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/link/TableMerger.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/link/XmlCompatVersioner.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/link/XmlNamespaceRemover.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/link/XmlReferenceLinker.cpp
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/optimize/MultiApkGenerator.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/optimize/ResourceDeduper.cpp
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/optimize/ResourceFilter.cpp
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/optimize/ResourcePathShortener.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/optimize/VersionCollapser.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/process/SymbolTable.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/proto/ProtoHelpers.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/proto/TableProtoDeserializer.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/proto/TableProtoSerializer.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/split/TableSplitter.cpp
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/text/Printer.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/text/Unicode.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/text/Utf8Iterator.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/unflatten/BinaryResourceParser.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/unflatten/ResChunkPullParser.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/util/BigBuffer.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/util/Files.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/util/Util.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/ConfigDescription.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/Debug.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/DominatorTree.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/Flags.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/java/AnnotationProcessor.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/java/ClassDefinition.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/java/JavaClassGenerator.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/java/ManifestClassGenerator.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/java/ProguardRules.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/LoadedApk.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/Locale.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/Resource.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/ResourceParser.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/ResourceTable.cpp
@@ -84,24 +82,25 @@ set(aapt2_static_sources
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/ResourceValues.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/SdkConstants.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/StringPool.cpp
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/trace/TraceBuffer.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/xml/XmlActionExecutor.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/xml/XmlDom.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/xml/XmlPullParser.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/xml/XmlUtil.cpp
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/Configuration.proto
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/Resources.proto
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/ResourcesInternal.proto
         )
 
 #生成的文件在这个目录
 if (EXISTS ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/Resources.pb.cc)
-    list(APPEND aapt2_static_sources ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/Resources.pb.cc)
+    list(APPEND aapt2_static_sources
+    ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/Resources.pb.cc
+    ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/Configuration.pb.cc
+    ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/ResourcesInternal.pb.cc
+    )
 else ()
     message(STATUS "请先使用cmake /path/to/cmakeFiles --target protobuffer_h生成protobuffer相关文件${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/Resources.pb.cc，否则后续构建无法正常进行")
-endif ()
-
-#生成的文件在这个目录
-if (EXISTS ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/ResourcesInternal.pb.cc)
-    list(APPEND aapt2_static_sources ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/ResourcesInternal.pb.cc)
-else ()
-    message(STATUS "请先使用cmake /path/to/cmakeFiles --target protobuffer_h生成protobuffer相关文件${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/ResourcesInternal.pb.cc，否则后续构建无法正常进行")
 endif ()
 
 set(aapt2_static_cflag " -Wall -Wno-delete-non-virtual-dtor -Wno-unused-parameter")
