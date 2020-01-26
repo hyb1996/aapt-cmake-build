@@ -96,7 +96,7 @@ set(aapt2_static_sources
 if (EXISTS ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/Resources.pb.cc)
     list(APPEND aapt2_static_sources
     ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/Resources.pb.cc
-    ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/Configuration.pb.cc
+    # ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/Configuration.pb.cc
     ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/frameworks/base/tools/aapt2/ResourcesInternal.pb.cc
     )
 else ()
