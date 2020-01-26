@@ -1,43 +1,35 @@
 cmake_minimum_required(VERSION 3.6)
 project(libpng)
 
-if(UNIX AND NOT APPLE)
-    SET (CMAKE_C_COMPILER "/usr/bin/clang")
-    SET (CMAKE_CXX_COMPILER "/usr/bin/clang++")
-endif()
+if (UNIX AND NOT APPLE)
+    SET(CMAKE_C_COMPILER "clang")
+    SET(CMAKE_CXX_COMPILER "clang++")
+endif ()
 
 set(libpng_sources
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libpng/png.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libpng/pngerror.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libpng/pngget.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libpng/pngmem.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libpng/pngpread.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libpng/pngread.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libpng/pngrio.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libpng/pngrtran.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libpng/pngrutil.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libpng/pngset.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libpng/pngtrans.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libpng/pngwio.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libpng/pngwrite.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libpng/pngwtran.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libpng/pngwutil.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libpng/contrib/intel/intel_init.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libpng/contrib/intel/filter_sse2_intrinsics.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libpng/arm/arm_init.c
-		${CMAKE_SOURCE_DIR}/${AOSP}/external/libpng/arm/filter_neon_intrinsics.c
-		${CMAKE_SOURCE_DIR}/${AOSP}/external/libpng/arm/filter_neon.S
+        ${CMAKE_SOURCE_DIR}/external/libpng/png.c
+        ${CMAKE_SOURCE_DIR}/external/libpng/pngerror.c
+        ${CMAKE_SOURCE_DIR}/external/libpng/pngget.c
+        ${CMAKE_SOURCE_DIR}/external/libpng/pngmem.c
+        ${CMAKE_SOURCE_DIR}/external/libpng/pngpread.c
+        ${CMAKE_SOURCE_DIR}/external/libpng/pngread.c
+        ${CMAKE_SOURCE_DIR}/external/libpng/pngrio.c
+        ${CMAKE_SOURCE_DIR}/external/libpng/pngrtran.c
+        ${CMAKE_SOURCE_DIR}/external/libpng/pngrutil.c
+        ${CMAKE_SOURCE_DIR}/external/libpng/pngset.c
+        ${CMAKE_SOURCE_DIR}/external/libpng/pngtrans.c
+        ${CMAKE_SOURCE_DIR}/external/libpng/pngwio.c
+        ${CMAKE_SOURCE_DIR}/external/libpng/pngwrite.c
+        ${CMAKE_SOURCE_DIR}/external/libpng/pngwtran.c
+        ${CMAKE_SOURCE_DIR}/external/libpng/pngwutil.c
+        ${CMAKE_SOURCE_DIR}/external/libpng/contrib/intel/intel_init.c
+        ${CMAKE_SOURCE_DIR}/external/libpng/contrib/intel/filter_sse2_intrinsics.c
         )
 
-enable_language(ASM)
-set_source_files_properties(${CMAKE_SOURCE_DIR}/${AOSP}/external/libpng/arm/filter_neon.S PROPERTIES COMPILE_FLAGS "${CMAKE_ASM_FLAGS} ${CMAKE_CXX_FLAGS} -x assembler-with-cpp")
 include_directories(
         ${libpng_header}
         ${zlib_header}
 )
-
-
-set(ENABLE_NEON ON)
 
 set(libpng_cflag "-std=gnu89 -Wall -Werror -Wno-unused-parameter -DPNG_INTEL_SSE_OPT=1")
 

@@ -2,39 +2,40 @@ cmake_minimum_required(VERSION 3.6)
 project(libcxx)
 
 if (UNIX AND NOT APPLE)
-    SET(CMAKE_C_COMPILER "/usr/bin/clang")
-    SET(CMAKE_CXX_COMPILER "/usr/bin/clang++")
+    SET(CMAKE_C_COMPILER "clang")
+    SET(CMAKE_CXX_COMPILER "clang++")
 endif ()
 
 set(libcxx_sources
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/algorithm.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/any.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/bind.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/chrono.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/condition_variable.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/debug.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/exception.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/future.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/hash.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/ios.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/iostream.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/locale.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/memory.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/mutex.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/new.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/optional.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/random.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/regex.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/shared_mutex.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/stdexcept.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/string.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/strstream.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/system_error.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/thread.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/typeinfo.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/utility.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/valarray.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/src/variant.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/algorithm.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/any.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/bind.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/chrono.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/condition_variable.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/debug.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/exception.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/future.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/hash.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/ios.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/iostream.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/locale.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/memory.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/mutex.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/new.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/optional.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/random.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/regex.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/shared_mutex.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/stdexcept.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/string.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/strstream.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/system_error.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/thread.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/typeinfo.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/utility.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/valarray.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/variant.cpp
+        ${CMAKE_SOURCE_DIR}/external/libcxx/src/vector.cpp
         )
 
 set(libcxx_cflag "")

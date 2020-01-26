@@ -2,32 +2,32 @@ cmake_minimum_required(VERSION 3.6)
 project(aapt_static)
 
 if (UNIX AND NOT APPLE)
-    SET(CMAKE_C_COMPILER "/usr/bin/clang")
-    SET(CMAKE_CXX_COMPILER "/usr/bin/clang++")
+    SET(CMAKE_C_COMPILER "clang")
+    SET(CMAKE_CXX_COMPILER "clang++")
 endif ()
 
 set(aapt_static_sources
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt/AaptAssets.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt/AaptConfig.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt/AaptUtil.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt/AaptXml.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt/ApkBuilder.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt/Command.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt/CrunchCache.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt/FileFinder.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt/Images.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt/Package.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt/pseudolocalize.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt/Resource.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt/ResourceFilter.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt/ResourceIdCache.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt/ResourceTable.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt/SourcePos.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt/StringPool.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt/WorkQueue.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt/XMLNode.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt/ZipEntry.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt/ZipFile.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt/AaptAssets.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt/AaptConfig.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt/AaptUtil.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt/AaptXml.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt/ApkBuilder.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt/Command.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt/CrunchCache.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt/FileFinder.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt/Images.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt/Package.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt/pseudolocalize.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt/Resource.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt/ResourceFilter.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt/ResourceIdCache.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt/ResourceTable.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt/SourcePos.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt/StringPool.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt/WorkQueue.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt/XMLNode.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt/ZipEntry.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt/ZipFile.cpp
         )
 
 set(aapt_static_cflag

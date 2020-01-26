@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.6)
 project(aapt2)
 
-if(UNIX AND NOT APPLE)
-    SET (CMAKE_C_COMPILER "/usr/bin/clang")
-    SET (CMAKE_CXX_COMPILER "/usr/bin/clang++")
-endif()
+if (UNIX AND NOT APPLE)
+    SET(CMAKE_C_COMPILER "clang")
+    SET(CMAKE_CXX_COMPILER "clang++")
+endif ()
 
 set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -s")
 set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O3")
@@ -17,13 +17,13 @@ set(CMAKE_STATIC_LINKER_FLAGS_DEBUG "${CMAKE_STATIC_LINKER_FLAGS_DEBUG} -s")
 set(CMAKE_SHARED_LINKER_FLAGS_DEBUG "${CMAKE_SHARED_LINKER_FLAGS_DEBUG} -s")
 
 set(aapt2_sources
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/Main.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/Main.cpp
         )
 
-set(aapt2_cflag "-Werror -Wall -Wno-unused-parameter --static")
+set(aapt2_cflag "-Werror -Wall -Wno-unused-parameter")
 
 if (WIN32)
-    set(aapt2_cflag "${aapt2_cflag} -D_GNU_SOURCE=1 -D__STDC_FORMAT_MACROS -Wno-error=cpp -Wno-error=maybe-uninitialized -Wno-error=unused-variable")
+    set(aapt2_cflag "${aapt2_cflag} -D_GNU_SOURCE=1 -D__STDC_FORMAT_MACROS -Wno-error=cpp -Wno-error=maybe-uninitialized -Wno-error=unused-variable -Wno-strict-aliasing -Wno-unused-but-set-variable")
 endif ()
 
 if(UNIX)
@@ -49,6 +49,10 @@ set(aapt2_cflag "${aapt2_cflag} -Wno-deprecated-declarations")
 set(aapt2_cflag "${aapt2_cflag} -O3")
 
 set(aapt2_cxxflag "${aapt2_cflag} -std=gnu++14 -Wno-missing-field-initializers -fno-exceptions")
+
+if(UNIX AND NOT APPLE)
+    set(aapt2_cxxflag "${aapt2_cxxflag} -Wno-unknown-attributes")
+endif()
 
 include_directories(
         ${protobuf_header}

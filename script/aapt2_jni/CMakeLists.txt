@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 3.6)
 project(aapt2_jni)
 
-if(UNIX AND NOT APPLE)
-    SET (CMAKE_C_COMPILER "/usr/bin/clang")
-    SET (CMAKE_CXX_COMPILER "/usr/bin/clang++")
-endif()
+if (UNIX AND NOT APPLE)
+    SET(CMAKE_C_COMPILER "clang")
+    SET(CMAKE_CXX_COMPILER "clang++")
+endif ()
 
 set(aapt2_jni_sources
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2/jni/aapt2_jni.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2/jni/aapt2_jni.cpp
         )
 
 set(aapt2_jni_cflag "-Werror -Wall -Wno-unused-parameter")
@@ -37,6 +37,10 @@ endif ()
 set(aapt2_jni_cflag "${aapt2_jni_cflag} -Wno-deprecated-declarations")
 
 set(aapt2_jni_cxxflag "${aapt2_jni_cflag} -std=gnu++14 -Wno-missing-field-initializers -fno-exceptions")
+
+if(UNIX AND NOT APPLE)
+    set(aapt2_jni_cxxflag "${aapt2_jni_cxxflag} -Wno-unknown-attributes")
+endif()
 
 include_directories(
         ${protobuf_header}

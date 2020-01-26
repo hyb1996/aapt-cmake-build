@@ -2,29 +2,29 @@ cmake_minimum_required(VERSION 3.6)
 project(base)
 
 if (UNIX AND NOT APPLE)
-    SET(CMAKE_C_COMPILER "/usr/bin/clang")
-    SET(CMAKE_CXX_COMPILER "/usr/bin/clang++")
+    SET(CMAKE_C_COMPILER "clang")
+    SET(CMAKE_CXX_COMPILER "clang++")
 endif ()
 
 set(base_sources
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/base/file.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/base/logging.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/base/parsenetaddress.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/base/quick_exit.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/base/stringprintf.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/base/strings.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/base/test_utils.cpp
+        ${CMAKE_SOURCE_DIR}/system/core/base/file.cpp
+        ${CMAKE_SOURCE_DIR}/system/core/base/logging.cpp
+        ${CMAKE_SOURCE_DIR}/system/core/base/parsenetaddress.cpp
+        ${CMAKE_SOURCE_DIR}/system/core/base/quick_exit.cpp
+        ${CMAKE_SOURCE_DIR}/system/core/base/stringprintf.cpp
+        ${CMAKE_SOURCE_DIR}/system/core/base/strings.cpp
+        ${CMAKE_SOURCE_DIR}/system/core/base/test_utils.cpp
         )
 
 if(WIN32)
     list(APPEND base_sources
-            ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/base/errors_windows.cpp
-            ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/base/utf8.cpp
+            ${CMAKE_SOURCE_DIR}/system/core/base/errors_windows.cpp
+            ${CMAKE_SOURCE_DIR}/system/core/base/utf8.cpp
             )
 elseif(UNIX)
     list(APPEND base_sources
-            ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/base/chrono_utils.cpp
-            ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/base/errors_unix.cpp
+            ${CMAKE_SOURCE_DIR}/system/core/base/chrono_utils.cpp
+            ${CMAKE_SOURCE_DIR}/system/core/base/errors_unix.cpp
             )
 endif()
 
@@ -68,6 +68,10 @@ if(UNIX)
     set(base_cxxflag "${base_cxxflag} -Wexit-time-destructors")
 endif()
 
+if(UNIX AND NOT APPLE)
+    set(base_cxxflag "${base_cxxflag} -Wno-unknown-attributes")
+endif()
+
 set(CMAKE_C_FLAGS ${base_cflag})
 set(CMAKE_CXX_FLAGS ${base_cxxflag})
 if(UNIX)
@@ -79,7 +83,6 @@ if(UNIX)
 endif()
 
 add_library(base STATIC ${base_sources})
-#add_library(base SHARED ${base_sources})
 target_link_libraries(base log)
 
 if(UNIX AND NOT APPLE)

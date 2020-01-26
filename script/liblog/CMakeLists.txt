@@ -1,40 +1,35 @@
 cmake_minimum_required(VERSION 3.6)
 project(liblog)
 
-if(UNIX AND NOT APPLE)
-    SET (CMAKE_C_COMPILER "/usr/bin/clang")
-    SET (CMAKE_CXX_COMPILER "/usr/bin/clang++")
-endif()
+if (UNIX AND NOT APPLE)
+    SET(CMAKE_C_COMPILER "clang")
+    SET(CMAKE_CXX_COMPILER "clang++")
+endif ()
 
 set(liblog_sources
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/liblog/config_read.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/liblog/config_write.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/liblog/log_event_list.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/liblog/log_event_write.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/liblog/logger_lock.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/liblog/logger_name.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/liblog/logger_read.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/liblog/logger_write.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/liblog/logprint.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/liblog/stderr_write.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/liblog/event_tag_map.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/liblog/log_time.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/liblog/properties.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/liblog/pmsg_reader.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/liblog/pmsg_writer.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/liblog/logd_reader.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/liblog/logd_writer.cpp
+        ${CMAKE_SOURCE_DIR}/system/core/liblog/config_read.c
+        ${CMAKE_SOURCE_DIR}/system/core/liblog/config_write.c
+        ${CMAKE_SOURCE_DIR}/system/core/liblog/local_logger.c
+        ${CMAKE_SOURCE_DIR}/system/core/liblog/log_event_list.c
+        ${CMAKE_SOURCE_DIR}/system/core/liblog/log_event_write.c
+        ${CMAKE_SOURCE_DIR}/system/core/liblog/log_ratelimit.cpp
+        ${CMAKE_SOURCE_DIR}/system/core/liblog/logger_lock.c
+        ${CMAKE_SOURCE_DIR}/system/core/liblog/logger_name.c
+        ${CMAKE_SOURCE_DIR}/system/core/liblog/logger_read.c
+        ${CMAKE_SOURCE_DIR}/system/core/liblog/logger_write.c
+        ${CMAKE_SOURCE_DIR}/system/core/liblog/logprint.c
+        ${CMAKE_SOURCE_DIR}/system/core/liblog/stderr_write.c
         )
 
 set(liblog_host_sources
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/liblog/fake_log_device.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/liblog/fake_writer.cpp
+        ${CMAKE_SOURCE_DIR}/system/core/liblog/fake_log_device.c
+        ${CMAKE_SOURCE_DIR}/system/core/liblog/fake_writer.c
         )
 
 if(WIN32)
-    list(APPEND liblog_host_sources ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/liblog/uio.c)
+    list(APPEND liblog_host_sources ${CMAKE_SOURCE_DIR}/system/core/liblog/uio.c)
 elseif(UNIX)
-    list(APPEND liblog_host_sources  ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/liblog/event_tag_map.cpp)
+    list(APPEND liblog_host_sources  ${CMAKE_SOURCE_DIR}/system/core/liblog/event_tag_map.cpp)
 endif()
 
 set(liblog_cflag "-DFAKE_LOG_DEVICE=1 -Werror -fvisibility=hidden -DLIBLOG_LOG_TAG=1006 -DSNET_EVENT_LOG_TAG=1397638484")

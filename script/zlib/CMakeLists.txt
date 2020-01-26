@@ -1,27 +1,27 @@
 cmake_minimum_required(VERSION 3.6)
 project(zlib)
 
-if(UNIX AND NOT APPLE)
-    SET (CMAKE_C_COMPILER "/usr/bin/clang")
-    SET (CMAKE_CXX_COMPILER "/usr/bin/clang++")
-endif()
+if (UNIX AND NOT APPLE)
+    SET(CMAKE_C_COMPILER "clang")
+    SET(CMAKE_CXX_COMPILER "clang++")
+endif ()
 
 set(zlib_sources
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/zlib/src/adler32.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/zlib/src/compress.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/zlib/src/crc32.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/zlib/src/deflate.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/zlib/src/gzclose.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/zlib/src/gzlib.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/zlib/src/gzread.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/zlib/src/gzwrite.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/zlib/src/infback.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/zlib/src/inflate.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/zlib/src/inftrees.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/zlib/src/inffast.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/zlib/src/trees.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/zlib/src/uncompr.c
-        ${CMAKE_SOURCE_DIR}/${AOSP}/external/zlib/src/zutil.c
+        ${CMAKE_SOURCE_DIR}/external/zlib/src/adler32.c
+        ${CMAKE_SOURCE_DIR}/external/zlib/src/compress.c
+        ${CMAKE_SOURCE_DIR}/external/zlib/src/crc32.c
+        ${CMAKE_SOURCE_DIR}/external/zlib/src/deflate.c
+        ${CMAKE_SOURCE_DIR}/external/zlib/src/gzclose.c
+        ${CMAKE_SOURCE_DIR}/external/zlib/src/gzlib.c
+        ${CMAKE_SOURCE_DIR}/external/zlib/src/gzread.c
+        ${CMAKE_SOURCE_DIR}/external/zlib/src/gzwrite.c
+        ${CMAKE_SOURCE_DIR}/external/zlib/src/infback.c
+        ${CMAKE_SOURCE_DIR}/external/zlib/src/inflate.c
+        ${CMAKE_SOURCE_DIR}/external/zlib/src/inftrees.c
+        ${CMAKE_SOURCE_DIR}/external/zlib/src/inffast.c
+        ${CMAKE_SOURCE_DIR}/external/zlib/src/trees.c
+        ${CMAKE_SOURCE_DIR}/external/zlib/src/uncompr.c
+        ${CMAKE_SOURCE_DIR}/external/zlib/src/zutil.c
         )
 
 include_directories(

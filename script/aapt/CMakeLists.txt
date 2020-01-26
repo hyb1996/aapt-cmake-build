@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.6)
 project(aapt)
 
-if(UNIX AND NOT APPLE)
-    SET (CMAKE_C_COMPILER "/usr/bin/clang")
-    SET (CMAKE_CXX_COMPILER "/usr/bin/clang++")
-endif()
+if (UNIX AND NOT APPLE)
+    SET(CMAKE_C_COMPILER "clang")
+    SET(CMAKE_CXX_COMPILER "clang++")
+endif ()
 
 set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -s")
 set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O3")
@@ -18,10 +18,10 @@ set(CMAKE_SHARED_LINKER_FLAGS_DEBUG "${CMAKE_SHARED_LINKER_FLAGS_DEBUG} -s")
 
 
 set(aapt_sources
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt/Main.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt/Main.cpp
         )
 
-set(aapt_cflag "-Werror -Wenum-compare-switch -Wall -Wno-format-y2k -DSTATIC_ANDROIDFW_FOR_TOOLS")
+set(aapt_cflag "-Werror -Wall -Wno-format-y2k -DSTATIC_ANDROIDFW_FOR_TOOLS")
 
 if(UNIX)
     set(aapt_cflag "${aapt_cflag} -fPIC")
@@ -43,7 +43,11 @@ if(APPLE)
     set(aapt_cflag "${aapt_cflag} -D_DARWIN_UNLIMITED_STREAMS")
 endif()
 
-set(aapt_cflag "${aapt_cflag} -O3 --static")
+set(aapt_cflag "${aapt_cflag} -O3 ")
+
+if(UNIX AND NOT APPLE)
+    set(aapt_static_cxxflag "${aapt_static_cxxflag} -Wno-unknown-attributes")
+endif()
 
 set(aapt_cxxflag "${aapt_cflag} -std=gnu++14")
 
@@ -92,6 +96,3 @@ endif ()
 if(UNIX AND NOT APPLE)
     target_link_libraries(aapt cxx cxxabi compiler_rt)
 endif()
-
-
-#find -name '*.txt' | xargs perl -pi -e 's|/usr/bin/clang|/usr/bin/clang|g'

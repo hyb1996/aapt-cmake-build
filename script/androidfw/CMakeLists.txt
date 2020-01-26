@@ -2,30 +2,31 @@ cmake_minimum_required(VERSION 3.6)
 project(androidfw)
 
 if (UNIX AND NOT APPLE)
-    SET(CMAKE_C_COMPILER "/usr/bin/clang")
-    SET(CMAKE_CXX_COMPILER "/usr/bin/clang++")
+    SET(CMAKE_C_COMPILER "clang")
+    SET(CMAKE_CXX_COMPILER "clang++")
 endif ()
 
 set(androidfw_sources
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/libs/androidfw/ApkAssets.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/libs/androidfw/Asset.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/libs/androidfw/AssetDir.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/libs/androidfw/AssetManager.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/libs/androidfw/AssetManager2.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/libs/androidfw/AttributeResolution.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/libs/androidfw/ChunkIterator.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/libs/androidfw/LoadedArsc.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/libs/androidfw/LocaleData.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/libs/androidfw/misc.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/libs/androidfw/ObbFile.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/libs/androidfw/ResourceTypes.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/libs/androidfw/ResourceUtils.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/libs/androidfw/StreamingZipInflater.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/libs/androidfw/TypeWrappers.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/libs/androidfw/Util.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/libs/androidfw/ZipFileRO.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/libs/androidfw/ZipUtils.cpp
-#        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/libs/androidfw/Helper.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/ApkAssets.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/Asset.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/AssetDir.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/AssetManager.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/AssetManager2.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/AttributeResolution.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/ChunkIterator.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/Idmap.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/LoadedArsc.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/LocaleData.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/misc.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/ObbFile.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/ResourceTypes.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/ResourceUtils.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/StreamingZipInflater.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/TypeWrappers.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/Util.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/ZipFileRO.cpp
+        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/ZipUtils.cpp
+#        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/Helper.cpp
         )
 
 set(androidfw_cflag "-Werror -Wall -Wunused -Wunreachable-code -DSTATIC_ANDROIDFW_FOR_TOOLS")
@@ -36,6 +37,10 @@ endif()
 
 if(WIN32)
     set(androidfw_cflag "${androidfw_cflag} -D_GNU_SOURCE=1 -D__STDC_FORMAT_MACROS -Wno-error=strict-aliasing -Wno-missing-field-initializers")
+endif()
+
+if(UNIX AND NOT APPLE)
+    set(androidfw_cflag "${androidfw_cflag} -Wno-unknown-attributes")
 endif()
 
 if(UNIX AND NOT APPLE)

@@ -1,15 +1,15 @@
 cmake_minimum_required(VERSION 3.6)
 project(libziparchive)
 
-if(UNIX AND NOT APPLE)
-    SET (CMAKE_C_COMPILER "/usr/bin/clang")
-    SET (CMAKE_CXX_COMPILER "/usr/bin/clang++")
-endif()
+if (UNIX AND NOT APPLE)
+    SET(CMAKE_C_COMPILER "clang")
+    SET(CMAKE_CXX_COMPILER "clang++")
+endif ()
 
 set(libziparchive_sources
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libziparchive/zip_archive.cc
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libziparchive/zip_archive_stream_entry.cc
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libziparchive/zip_writer.cc
+        ${CMAKE_SOURCE_DIR}/system/core/libziparchive/zip_archive.cc
+        ${CMAKE_SOURCE_DIR}/system/core/libziparchive/zip_archive_stream_entry.cc
+        ${CMAKE_SOURCE_DIR}/system/core/libziparchive/zip_writer.cc
         )
 
 set(libziparchive_cflag "-DZLIB_CONST -Werror -Wall -D_FILE_OFFSET_BITS=64")
@@ -32,6 +32,10 @@ endif()
 set(libziparchive_cflag "${libziparchive_cflag} -DNDEBUG -UDEBUG")
 
 set(libziparchive_cxxflag "${libziparchive_cflag} -std=gnu++14 -Wold-style-cast -Wno-missing-field-initializers")
+
+if(UNIX AND NOT APPLE)
+    set(libziparchive_cxxflag "${libziparchive_cxxflag} -Wno-unknown-attributes")
+endif()
 
 include_directories(
         ${libziparchive_header}
