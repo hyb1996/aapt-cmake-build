@@ -7,7 +7,6 @@ if(UNIX AND NOT APPLE)
 endif()
 
 set(libutils_sources
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libutils/CallStack.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libutils/FileMap.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libutils/JenkinsHash.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libutils/NativeHandle.cpp
@@ -15,7 +14,6 @@ set(libutils_sources
         ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libutils/PropertyMap.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libutils/RefBase.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libutils/SharedBuffer.cpp
-        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libutils/Static.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libutils/StopWatch.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libutils/String8.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libutils/String16.cpp
@@ -27,6 +25,8 @@ set(libutils_sources
         ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libutils/Unicode.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libutils/VectorImpl.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libutils/misc.cpp
+        # Android
+        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libutils/Trace.cpp
         )
 
 set(libutils_cflag "-Wall -Werror -DLIBUTILS_NATIVE=1")
