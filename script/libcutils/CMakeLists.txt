@@ -49,11 +49,11 @@ elseif(ANDROID)
         ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libcutils/trace-dev.cpp
         ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libcutils/uevent.cpp
     )
-    if (1) {
+    if (1)
         list(APPEND libcutils_sources
             ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libcutils/arch-arm64/android_memset.S
         )
-    }
+    endif()
 elseif(UNIX)
     list(APPEND libcutils_sources
         ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libcutils/ashmem-host.cpp
