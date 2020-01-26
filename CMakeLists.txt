@@ -1,82 +1,83 @@
 cmake_minimum_required(VERSION 3.6)
 project(aapt_cmake_buildscript)
 
+set(AOSP android-9.0.0_r10)
 #纯头文件引用
 set(native_header
-        ${CMAKE_SOURCE_DIR}/frameworks/native/include
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/native/include
         )
 set(safe_iop_header
-        ${CMAKE_SOURCE_DIR}/external/safe-iop/include
+        ${CMAKE_SOURCE_DIR}/${AOSP}/external/safe-iop/include
         )
 set(libbacktrace_header
-        ${CMAKE_SOURCE_DIR}/system/core/libbacktrace
-        ${CMAKE_SOURCE_DIR}/system/core/libbacktrace/include
+        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libbacktrace
+        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libbacktrace/include
         )
 set(libsystem_header
-        ${CMAKE_SOURCE_DIR}/system/core/libsystem/include
+        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libsystem/include
         )
 
 #源码和头文件引用
 set(androidfw_header
-        ${CMAKE_SOURCE_DIR}/frameworks/base/libs/androidfw/include
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/libs/androidfw/include
         )
 set(expat_header
-        ${CMAKE_SOURCE_DIR}/external/expat
-        ${CMAKE_SOURCE_DIR}/external/expat/lib
+        ${CMAKE_SOURCE_DIR}/${AOSP}/external/expat
+        ${CMAKE_SOURCE_DIR}/${AOSP}/external/expat/lib
         )
 set(libpng_header
-        ${CMAKE_SOURCE_DIR}/external/libpng
+        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libpng
         )
 set(protobuf_header
-        ${CMAKE_SOURCE_DIR}/external/protobuf/android
-        ${CMAKE_SOURCE_DIR}/external/protobuf/src
+        ${CMAKE_SOURCE_DIR}/${AOSP}/external/protobuf/android
+        ${CMAKE_SOURCE_DIR}/${AOSP}/external/protobuf/src
         )
 set(zlib_header
-        ${CMAKE_SOURCE_DIR}/external/zlib
-        ${CMAKE_SOURCE_DIR}/external/zlib/src
+        ${CMAKE_SOURCE_DIR}/${AOSP}/external/zlib
+        ${CMAKE_SOURCE_DIR}/${AOSP}/external/zlib/src
         )
 
 set(libcxx_header
-        ${CMAKE_SOURCE_DIR}/external/libcxx/include
+        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxx/include
         )
 
 set(libcxxabi_header
-        ${CMAKE_SOURCE_DIR}/external/libcxxabi/include
+        ${CMAKE_SOURCE_DIR}/${AOSP}/external/libcxxabi/include
         )
 
 set(compiler_rt_header
-        ${CMAKE_SOURCE_DIR}/external/compiler-rt/include
+        ${CMAKE_SOURCE_DIR}/${AOSP}/external/compiler-rt/include
         )
 
 set(base_header
-        ${CMAKE_SOURCE_DIR}/system/core/base/include
+        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/base/include
         )
 set(libcutils_header
-        ${CMAKE_SOURCE_DIR}/system/core/libcutils
-        ${CMAKE_SOURCE_DIR}/system/core/libcutils/include
+        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libcutils
+        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libcutils/include
         )
 set(liblog_header
-        ${CMAKE_SOURCE_DIR}/system/core/liblog
-        ${CMAKE_SOURCE_DIR}/system/core/liblog/include
+        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/liblog
+        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/liblog/include
         )
 set(libutils_header
-        ${CMAKE_SOURCE_DIR}/system/core/libutils
-        ${CMAKE_SOURCE_DIR}/system/core/libutils/include
+        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libutils
+        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libutils/include
         )
 set(libziparchive_header
-        ${CMAKE_SOURCE_DIR}/system/core/libziparchive
-        ${CMAKE_SOURCE_DIR}/system/core/libziparchive/include
+        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libziparchive
+        ${CMAKE_SOURCE_DIR}/${AOSP}/system/core/libziparchive/include
         )
 set(libnativehelper_header
-        ${CMAKE_SOURCE_DIR}/libnativehelper/include_jni
+        ${CMAKE_SOURCE_DIR}/${AOSP}/libnativehelper/include_jni
         )
 #aapt头文件
 set(aapt_header
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt
         )
 #aapt2头文件
 set(aapt2_header
-        ${CMAKE_SOURCE_DIR}/frameworks/base/tools/aapt2
+        ${CMAKE_SOURCE_DIR}/${AOSP}/frameworks/base/tools/aapt2
         )
 
 set(global_libcxx_cxxflags "-nostdinc++ -DLIBCXX_BUILDING_LIBCXXABI -D_LIBCPP_BUILDING_LIBRARY")
